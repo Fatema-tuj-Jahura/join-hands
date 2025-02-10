@@ -8,8 +8,8 @@ const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <nav className="bg-[#EBECCc] px-6 py-4 shadow-md">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <nav className="bg-[#EBECCc] px-4 py-4 shadow-md">
+      <div className=" mx-auto flex items-center justify-between">
         {/* Logo & Name */}
         <div className="flex items-center space-x-1">
           <span className="text-4xl font-extrabold text-[#EC9C85]" ><MdVolunteerActivism /> </span>
