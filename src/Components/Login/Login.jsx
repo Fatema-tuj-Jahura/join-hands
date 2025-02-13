@@ -1,12 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
+
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import swal from "sweetalert2";
 import backgroundImage from '../../assets/regi-bg.png';
 import loginImage from '../../assets/login.png';
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+
+
 
 const Login = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const {userLogin, setUser} = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
     
@@ -19,8 +27,36 @@ const Login = () => {
     }
     
     // Perform login logic here
-    console.log("Logging in with:", email, password);
-    e.target.reset();
+    userLogin(email, password)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        navigate(location?.state ? location.state : "/");
+
+        // Success Message
+        swal.fire({
+          title: "Success!",
+          text: "Login successful!",
+          icon: "success",
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "OK",
+        });
+        console.log("Logging in with:", email, password);
+        e.target.reset();
+      })
+      .catch((error) => {
+        // Error Message
+        console.log(error)
+        swal.fire({
+          title: "Error!",
+          text: "Invalid email or password!",
+          icon: "error",
+          confirmButtonColor: "#d33",
+          confirmButtonText: "Try Again",
+        });
+      });
+    
+    
   };
 
   return (
@@ -74,7 +110,7 @@ const Login = () => {
           </div>
 
           <p className="text-center text-gray-700 mt-4">
-            Don't have an account? <Link to="/register" className="text-[#561C24] underline">Sign Up</Link>
+            Do not have an account? <Link to="/register" className="text-[#561C24] underline">Sign Up</Link>
           </p>
         </div>
       </div>

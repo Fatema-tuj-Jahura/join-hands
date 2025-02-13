@@ -5,8 +5,11 @@ import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
 import backgroundImage from '../../assets/regi-bg.png';
 import registerImage from '../../assets/register.jpg';
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Register = () => {
+  const {createUser} = useContext(AuthContext);
   const handleRegister = (e) => {
     e.preventDefault();
      
@@ -14,6 +17,14 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const photo = e.target.photo.value;
+
+    createUser(email, password)
+    .then((result) => {
+        const user = result.user
+        console.log(user);
+      }
+      
+    )
 
     // password validation
     if (!/[A-Z]/.test(password)) {
