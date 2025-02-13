@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <nav className="bg-[#EBECCc] px-4 py-4 shadow-md">
+    <nav className="bg-[#EBECCc] px-4 py-6 shadow-md">
       <div className=" mx-auto flex items-center justify-between">
         {/* Logo & Name */}
         <div className="flex items-center space-x-1">

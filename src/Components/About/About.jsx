@@ -15,7 +15,7 @@ const About = () => {
         <img
           src={aboutImage1}
           alt="About Overlay"
-          className="w-60 md:w-80 absolute -bottom-10 -right-6 rounded-lg border-4 border-[#35522B] shadow-lg"
+          className="w-60 md:w-80 absolute -bottom-10 -right-6 rounded-lg border-4 border-[#EBECCc] shadow-lg"
         />
       </div>
 
