@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
@@ -9,7 +9,8 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Register = () => {
-  const {createUser} = useContext(AuthContext);
+  const {setUser, createUser, updateUserProfile} = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
      
@@ -17,14 +18,6 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const photo = e.target.photo.value;
-
-    createUser(email, password)
-    .then((result) => {
-        const user = result.user
-        console.log(user);
-      }
-      
-    )
 
     // password validation
     if (!/[A-Z]/.test(password)) {
@@ -40,12 +33,28 @@ const Register = () => {
       return;
     }
 
-    Swal.fire({
-      icon: "success",
-      title: "Registration Successful",
-      text: `Welcome ${name}!`,
-    });
-    e.target.reset();
+    createUser(email, password)
+    .then((result) => {
+        const user = result.user
+        setUser(user);
+        console.log(user);
+        updateUserProfile({ displayName: name, photoURL: photo })
+
+        .then(() => {
+          navigate('/');
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+        Swal.fire({
+          icon: "success",
+          title: "Registration Successful",
+          text: `Welcome ${name}!`,
+        });
+        e.target.reset();
+      }
+      
+    )
   };
 
   return (

@@ -8,13 +8,26 @@ import backgroundImage from '../../assets/regi-bg.png';
 import loginImage from '../../assets/login.png';
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-
-
+import { GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup } from "firebase/auth";
+import { auth } from '../firebase/firebase.config.js';
 
 const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const {userLogin, setUser} = useContext(AuthContext);
+  const provider = new GoogleAuthProvider();
+   
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // Handle Google Sign-In success
+      })
+      .catch((error) => {
+        console.log("Error", error);
+      });
+  };
+  
   const handleLogin = (e) => {
     e.preventDefault();
     
@@ -26,11 +39,12 @@ const Login = () => {
       return;
     }
     
-    // Perform login logic here
+    
     userLogin(email, password)
       .then((result) => {
         const user = result.user;
         setUser(user);
+        console.log(user);
         navigate(location?.state ? location.state : "/");
 
         // Success Message
@@ -103,7 +117,7 @@ const Login = () => {
           </form>
 
           <div className="mt-4 flex items-center justify-center">
-            <button className="flex items-center space-x-2 bg-[#F9F2EC] border py-2 px-4 rounded-lg text-gray-700 hover:bg-[#EFD8C9] transition">
+            <button onClick={handleGoogleSignIn} className="flex items-center space-x-2 bg-[#F9F2EC] border py-2 px-4 rounded-lg text-gray-700 hover:bg-[#EFD8C9] transition">
               <FcGoogle className="text-xl" />
               <span>Login with Google</span>
             </button>

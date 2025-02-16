@@ -13,6 +13,8 @@ import Home from './Components/Home/Home';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import AuthProvider from './components/Provider/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AddNeedPost from './components/AddNeedPost/AddNeedPost';
 
 const router = createBrowserRouter([
   
@@ -31,6 +33,12 @@ const router = createBrowserRouter([
       {
         path: 'login',
         element: <Login></Login>,
+      },
+      {
+        path: '/addPost',
+        element: <PrivateRoute>
+          <AddNeedPost></AddNeedPost>
+        </PrivateRoute>,
       }
     ],
   },  
