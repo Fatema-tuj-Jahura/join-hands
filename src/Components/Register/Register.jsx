@@ -1,5 +1,5 @@
 
-import { Link , useNavigate } from "react-router-dom";
+import { Link , useNavigate, useLocation } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
@@ -11,6 +11,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 const Register = () => {
   const {setUser, createUser, updateUserProfile} = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
   const handleRegister = (e) => {
     e.preventDefault();
      
@@ -41,7 +42,7 @@ const Register = () => {
         updateUserProfile({ displayName: name, photoURL: photo })
 
         .then(() => {
-          navigate('/');
+          navigate(location?.state ? location.state : "/");
         })
         .catch((error) => {
           console.log(error);

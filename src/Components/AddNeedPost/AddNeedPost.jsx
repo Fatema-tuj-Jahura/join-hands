@@ -3,6 +3,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import importedImage from "../../assets/add-post.jpg";
+import swal from "sweetalert2";
 
 const AddNeedPost = () => {
   const { user } = useContext(AuthContext);
@@ -23,8 +24,29 @@ const AddNeedPost = () => {
     const organizerEmail = form.organizerEmail.value;
     
 
-    const volunteerPost = { coverImage, title, description, category, location, volunteersNeeded, deadline, organizerName, organizerEmail };
-    console.log(volunteerPost);
+    const newPost = { coverImage, title, description, category, location, volunteersNeeded, deadline, organizerName, organizerEmail };
+    console.log(newPost);
+    // Add data
+    fetch('http://localhost:5000/volunteer', {
+        method: 'POST',
+        headers: {
+           'content-type': 'application/json'
+        },
+        body: JSON.stringify(newPost)
+     })
+     .then(res=> res.json())
+    .then(data=>{
+        console.log(data);
+        if(data.insertedId){
+            swal.fire({
+               title: "Success!",
+               text: "You sucessfully adeed volunteer need post!!",
+               icon: "success",
+               confirmButtonColor: "#6A7F72",
+               confirmButtonText: "Keep going",
+            });
+        }
+    })
   };
 
   return (
