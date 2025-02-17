@@ -34,7 +34,7 @@ const Navbar = () => {
           <Link to="/" className="hover:text-[#EC9C85] underline decoration-[#EC9C85]">
             Home
           </Link>
-          <Link to="/volunteer-posts" className="hover:text-[#EC9C85] underline decoration-[#EC9C85]">
+          <Link to="/allPost" className="hover:text-[#EC9C85] underline decoration-[#EC9C85]">
             All Volunteer Need Posts
           </Link>
 
@@ -52,7 +52,7 @@ const Navbar = () => {
                 <Link to="/addPost" className="block px-4 py-2 text-[#58744B] text-lg hover:bg-[#EFD8C9]">
                   Add Volunteer Need Post
                 </Link>
-                <Link to="/manage-posts" className="block px-4 py-2 text-[#58744B] text-lg hover:bg-[#EFD8C9]">
+                <Link to="/managePost" className="block px-4 py-2 text-[#58744B] text-lg hover:bg-[#EFD8C9]">
                   Manage My Posts
                 </Link>
               </div>
@@ -124,7 +124,7 @@ const Navbar = () => {
           </div>
 
           <Link to="/" className="block text-[#6A7F72] hover:text-[#EC9C85]">Home</Link>
-          <Link to="/volunteer-posts" className="block text-[#6A7F72] hover:text-[#EC9C85]">All Volunteer Need Posts</Link>
+          <Link to="/allPost" className="block text-[#6A7F72] hover:text-[#EC9C85]">All Volunteer Need Posts</Link>
 
           {/* Login/Logout in Mobile Menu */}
           {user && user?.email ? (
@@ -150,7 +150,7 @@ const Navbar = () => {
           {isDropdownOpen && (
             <div className="pl-4">
               <Link to="/addPost" className="block text-[#58744B] hover:text-[#EC9C85]">Add Volunteer Need Post</Link>
-              <Link to="/manage-posts" className="block text-[#58744B] hover:text-[#EC9C85]">Manage My Posts</Link>
+              <Link to="/managePost" className="block text-[#58744B] hover:text-[#EC9C85]">Manage My Posts</Link>
             </div>
           )}
         </div>

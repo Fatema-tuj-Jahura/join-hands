@@ -15,7 +15,9 @@ import Login from './components/Login/Login';
 import AuthProvider from './components/Provider/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddNeedPost from './components/AddNeedPost/AddNeedPost';
-
+import AllNeedPost from './components/AllNeedPost/AllNeedPost';
+import ManagePost from './components/ManagePost/ManagePost';
+import DetailsPostPage from './components/DetailsPostPage/DetailsPostPage'
 const router = createBrowserRouter([
   
   {
@@ -35,11 +37,28 @@ const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
+        path: '/allPost',
+        element: <AllNeedPost></AllNeedPost>,
+        
+      },
+      {
         path: '/addPost',
         element: <PrivateRoute>
           <AddNeedPost></AddNeedPost>
         </PrivateRoute>,
-      }
+      },
+      {
+        path: '/managePost',
+        element: <PrivateRoute>
+          <ManagePost></ManagePost>
+        </PrivateRoute>,
+      },
+      {
+        path: '/detailsPost',
+        element: <PrivateRoute>
+          <DetailsPostPage></DetailsPostPage>
+        </PrivateRoute>,
+      },
     ],
   },  
 ]);
