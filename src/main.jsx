@@ -54,10 +54,11 @@ const router = createBrowserRouter([
         </PrivateRoute>,
       },
       {
-        path: '/detailsPost',
+        path: '/detailsPost/:id',
         element: <PrivateRoute>
           <DetailsPostPage></DetailsPostPage>
         </PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/volunteer/${params.id}`),
       },
     ],
   },  

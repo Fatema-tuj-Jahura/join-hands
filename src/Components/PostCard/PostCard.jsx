@@ -38,7 +38,7 @@ const PostCard = ({ post }) => {
 
         {/* View Details Button */}
         <div className="card-actions justify-end mt-4">
-          <Link to={`/detailsPost`}>
+          <Link to={`/detailsPost/${post._id}`}>
             <button className="btn bg-[#95AA9B] hover:bg-[#7F9C85] text-white border-none rounded-md px-6 py-2">
               View Details
             </button>
