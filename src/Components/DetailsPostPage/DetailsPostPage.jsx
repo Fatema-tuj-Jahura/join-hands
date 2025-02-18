@@ -7,7 +7,7 @@ const DetailsPostPage = () => {
   const navigate = useNavigate();
   
 
-  const { coverImage, title, description, category, location, volunteersNeeded, deadline, organizerName, organizerEmail } = postData;
+  const {_id, coverImage, title, description, category, location, volunteersNeeded, deadline, organizerName, organizerEmail } = postData;
 
   return (
     <div className="bg-gradient-to-br from-[#4A7856] to-[#95AA9B] text-[#06141B] shadow-lg flex flex-col sm:flex-row items-center sm:items-start w-full h-auto p-6 lg:p-8 gap-6 rounded-lg border border-[#CFDAC7]">
@@ -56,7 +56,7 @@ const DetailsPostPage = () => {
 
         {/* Volunteer Button */}
         <div className="card-actions justify-center sm:justify-start">
-          <Link to={``}>
+          <Link to={`/volunteer/${_id}`}>
             <button className="btn bg-[#EC9C85] hover:bg-[#EFD8C9] text-[#06141B] border-none px-6 py-2 rounded-md w-full sm:w-auto shadow-md">
               Be a Volunteer
             </button>

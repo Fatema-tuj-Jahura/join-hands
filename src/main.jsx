@@ -17,7 +17,8 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddNeedPost from './components/AddNeedPost/AddNeedPost';
 import AllNeedPost from './components/AllNeedPost/AllNeedPost';
 import ManagePost from './components/ManagePost/ManagePost';
-import DetailsPostPage from './components/DetailsPostPage/DetailsPostPage'
+import DetailsPostPage from './components/DetailsPostPage/DetailsPostPage';
+import Volunteer from './components/Volunteer/Volunteer';
 const router = createBrowserRouter([
   
   {
@@ -57,6 +58,13 @@ const router = createBrowserRouter([
         path: '/detailsPost/:id',
         element: <PrivateRoute>
           <DetailsPostPage></DetailsPostPage>
+        </PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/volunteer/${params.id}`),
+      },
+      {
+        path: '/volunteer/:id',
+        element: <PrivateRoute>
+          <Volunteer></Volunteer>
         </PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/volunteer/${params.id}`),
       },
