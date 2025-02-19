@@ -17,6 +17,8 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddNeedPost from './components/AddNeedPost/AddNeedPost';
 import AllNeedPost from './components/AllNeedPost/AllNeedPost';
 import ManagePost from './components/ManagePost/ManagePost';
+import ManageNeedPost from './components/ManageNeedPost/ManageNeedPost';
+import UpdateNeedPost from './components/UpdateNeedPost/UpdateNeedPost';
 import DetailsPostPage from './components/DetailsPostPage/DetailsPostPage';
 import Volunteer from './components/Volunteer/Volunteer';
 const router = createBrowserRouter([
@@ -54,6 +56,21 @@ const router = createBrowserRouter([
           <ManagePost></ManagePost>
         </PrivateRoute>,
       },
+      
+      {
+        path: '/manageNeedPost',
+        element: <PrivateRoute>
+          <ManageNeedPost></ManageNeedPost>
+        </PrivateRoute>,
+      },
+      {
+        path: '/updateNeedPost/:id',
+        element: <PrivateRoute>
+          <UpdateNeedPost></UpdateNeedPost>
+        </PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/volunteer/${params.id}`),
+      },
+
       {
         path: '/detailsPost/:id',
         element: <PrivateRoute>
