@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useLoaderData, useNavigate, Link } from "react-router-dom";
-import { FaMapMarkerAlt, FaCalendarAlt, FaUser, FaEnvelope, FaClipboardList } from "react-icons/fa";
+          
+import { FaMapMarkerAlt, FaCalendarAlt, FaUser, FaEnvelope, FaClipboardList, FaUsers } from "react-icons/fa";
 
 const DetailsPostPage = () => {
   const postData = useLoaderData();
@@ -42,6 +43,10 @@ const DetailsPostPage = () => {
         <p className="flex items-center text-lg mb-2 text-[#FAE7E2]">
           <FaCalendarAlt className="text-[#EC9C85] mr-2" /> 
           <span className="font-semibold text-[#EC9C85]">Deadline: </span> {deadline}
+        </p>
+
+        <p className="flex items-center text-lg mb-2 text-[#FAE7E2]">
+          <FaUsers className="text-[#EC9C85] mr-2" /> Volunteers Needed: {volunteersNeeded}
         </p>
 
         <p className="flex items-center text-lg mb-2 text-[#FAE7E2]">

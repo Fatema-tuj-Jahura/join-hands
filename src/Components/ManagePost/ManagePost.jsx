@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ManageNeedPost from "../ManageNeedPost/ManageNeedPost";
 import UpdateNeedPost from "../UpdateNeedPost/UpdateNeedPost";
-
+import ManageRequestPost from "../ManageRequestPost/ManageRequestPost";
 const ManagePost = () => {
   const [activeTab, setActiveTab] = useState("needPost");
 
@@ -34,7 +34,7 @@ const ManagePost = () => {
         )}
 
         {activeTab === "requestPost" && (
-          <UpdateNeedPost></UpdateNeedPost>
+          <ManageRequestPost></ManageRequestPost>
         )}
       </div>
     </div>

@@ -19,6 +19,7 @@ import AllNeedPost from './components/AllNeedPost/AllNeedPost';
 import ManagePost from './components/ManagePost/ManagePost';
 import ManageNeedPost from './components/ManageNeedPost/ManageNeedPost';
 import UpdateNeedPost from './components/UpdateNeedPost/UpdateNeedPost';
+import ManageRequestPost from './components/ManageRequestPost/ManageRequestPost';
 import DetailsPostPage from './components/DetailsPostPage/DetailsPostPage';
 import Volunteer from './components/Volunteer/Volunteer';
 const router = createBrowserRouter([
@@ -61,6 +62,12 @@ const router = createBrowserRouter([
         path: '/manageNeedPost',
         element: <PrivateRoute>
           <ManageNeedPost></ManageNeedPost>
+        </PrivateRoute>,
+      },
+      {
+        path: '/manageRequestPost',
+        element: <PrivateRoute>
+          <ManageRequestPost></ManageRequestPost>
         </PrivateRoute>,
       },
       {

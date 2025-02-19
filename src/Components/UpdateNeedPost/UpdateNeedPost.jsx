@@ -3,9 +3,10 @@ import { useLoaderData } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
-
+import { useNavigate } from "react-router-dom";
 const UpdateVolunteerPost = () => {
   const postData = useLoaderData();
+  const navigate = useNavigate();
   const {_id, coverImage, title, description, category, location, volunteersNeeded, deadline, organizerName, organizerEmail } = postData;
   
   const [updatedDeadline, setUpdatedDeadline] = useState(new Date(deadline));
@@ -48,6 +49,7 @@ const UpdateVolunteerPost = () => {
             confirmButtonText: "OK",
           });
         }
+        navigate('/manageNeedPost');
       });
   };
 
