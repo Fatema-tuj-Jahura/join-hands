@@ -7,7 +7,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-// import Error from './Components/Error/Error';
+import Error from './Components/Error/Error';
 import Root from './Components/Root/Root';
 import Home from './Components/Home/Home';
 import Register from './components/Register/Register';
@@ -23,7 +23,10 @@ import ManageRequestPost from './components/ManageRequestPost/ManageRequestPost'
 import DetailsPostPage from './components/DetailsPostPage/DetailsPostPage';
 import Volunteer from './components/Volunteer/Volunteer';
 const router = createBrowserRouter([
-  
+  {
+    path: "*", 
+    element: <Error></Error>,
+  },
   {
     path: "/",
     element:<Root></Root> ,

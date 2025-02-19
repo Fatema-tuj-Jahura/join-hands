@@ -42,9 +42,7 @@ const DetailsPostPage = () => {
           <span className="font-semibold text-[#EC9C85]">Deadline: </span> {deadline}
         </p>
 
-        {/* <p className="flex items-center text-lg mb-2 text-[#FAE7E2]">
-          <FaUsers className="text-[#EC9C85] mr-2" /> Volunteers Needed: {volunteersNeeded}
-        </p> */}
+        
         <p className="flex items-center text-lg mb-2 text-[#FAE7E2]">
           <FaUsers className="text-[#EC9C85] mr-2" /> 
           <span className="font-semibold text-[#EC9C85]">Volunteers Needed: </span> {volunteersNeeded}
