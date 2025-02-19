@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt, FaUsers, FaTag } from "react-icons/fa"; // Importing icons
 
