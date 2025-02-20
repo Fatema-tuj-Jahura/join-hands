@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import  { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import { FaTrash, FaEdit } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 
@@ -64,7 +64,7 @@ const ManageRequestPost = () => {
             <p className="text-center text-gray-600">Loading...</p>
           ) : posts.length === 0 ? (
             <p className="text-center text-gray-700 text-lg">
-              You haven't added any volunteer need posts yet.
+              You have not added any volunteer need posts yet.
             </p>
           ) : (
             <div className="overflow-x-auto">
