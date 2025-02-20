@@ -61,7 +61,9 @@ const ManageRequestPost = () => {
           </h2>
       
           {loading ? (
-            <p className="text-center text-gray-600">Loading...</p>
+            <div className="flex justify-center items-center py-10">
+            <span className="loading loading-spinner loading-lg text-[#4A7856]"></span>
+          </div>
           ) : posts.length === 0 ? (
             <p className="text-center text-gray-700 text-lg">
               You have not added any volunteer need posts yet.

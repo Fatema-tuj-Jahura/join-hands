@@ -10,9 +10,9 @@ const SliderComponent = () => {
   return (
     <Carousel 
       showThumbs={false} 
-    //   autoPlay 
-    //   infiniteLoop 
-    //   interval={3000} 
+      autoPlay 
+      infiniteLoop 
+      interval={3000} 
       showArrows={true} 
       showStatus={false} 
     >
