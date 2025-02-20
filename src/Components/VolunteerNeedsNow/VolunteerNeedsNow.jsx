@@ -6,7 +6,7 @@ const VolunteerNeedsNow = () => {
   const [volunteerNeeds, setVolunteerNeeds] = useState([]);
 
   useEffect(() => {
-    fetch("https://join-hands-server.vercel.app/volunteer") 
+    fetch("https://join-hands-server.vercel.app/volunteer/upcoming") 
       .then((res) => res.json())
       .then((data) => setVolunteerNeeds(data))
       .catch((error) => console.error("Error fetching volunteer needs:", error));
