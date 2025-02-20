@@ -1,8 +1,52 @@
-# React + Vite
+🌟 Project Purpose
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Join Hands is a platform designed to connect volunteers with organizations and events in need of support. Users can browse, search, and manage volunteer opportunities efficiently.
 
-Currently, two official plugins are available:
+🔗 Live URL
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Join Hands Live Demo (Replace with actual deployed link)
+
+🚀 Key Features
+
+Volunteer Posts: Browse available volunteer needs.
+
+Search & Filter: Find opportunities based on title and category.
+
+User Authentication: Secure login and logout.
+
+Manage Posts: Add, edit, and delete volunteer posts.
+
+Dark/Light Mode: Toggle theme for better user experience.
+
+Responsive Design: Works on all screen sizes.
+
+Sorting by Deadline: Shows posts sorted by the nearest deadline.
+
+Loading Spinner: Displays a spinner while fetching data.
+
+📦 Tech Stack & NPM Packages Used
+
+Frontend:
+
+React - UI Framework
+
+React Router DOM - Navigation
+
+Tailwind CSS & DaisyUI - Styling & Components
+
+React Icons - Icons
+
+React Tooltip - Tooltips for better UX
+
+Backend:
+
+Node.js & Express.js - Backend Server
+
+MongoDB - Database
+
+Cors & Dotenv - Security & Configurations
+
+Additional Utilities:
+
+Firebase Authentication - User Authentication
+
