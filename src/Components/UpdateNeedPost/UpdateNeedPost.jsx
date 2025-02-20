@@ -31,7 +31,7 @@ const UpdateVolunteerPost = () => {
       deadline: updatedDeadline,
     };
 
-    fetch(`http://localhost:5000/volunteer/${_id}`, {
+    fetch(`https://join-hands-server.vercel.app/volunteer/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

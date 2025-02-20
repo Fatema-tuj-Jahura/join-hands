@@ -78,7 +78,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <UpdateNeedPost></UpdateNeedPost>
         </PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/volunteer/${params.id}`),
+        loader: ({params}) => fetch(`https://join-hands-server.vercel.app/volunteer/${params.id}`),
       },
 
       {
@@ -86,14 +86,14 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <DetailsPostPage></DetailsPostPage>
         </PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/volunteer/${params.id}`),
+        loader: ({params}) => fetch(`https://join-hands-server.vercel.app/volunteer/${params.id}`),
       },
       {
         path: '/volunteer/:id',
         element: <PrivateRoute>
           <Volunteer></Volunteer>
         </PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/volunteer/${params.id}`),
+        loader: ({params}) => fetch(`https://join-hands-server.vercel.app/volunteer/${params.id}`),
       },
     ],
   },  

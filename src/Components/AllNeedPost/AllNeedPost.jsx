@@ -9,7 +9,7 @@ const AllNeedPost = () => {
   const [layout, setLayout] = useState("card"); // Default layout is card
 
   useEffect(() => {
-    fetch(`http://localhost:5000/volunteer?search=${search}`)
+    fetch(`https://join-hands-server.vercel.app/volunteer?search=${search}`)
       .then((res) => res.json())
       .then((data) => setPosts(data));
   }, [search]);

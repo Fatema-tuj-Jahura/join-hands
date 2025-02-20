@@ -11,7 +11,7 @@ const ManageNeedPost = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/volunteer")
+    fetch("https://join-hands-server.vercel.app/volunteer")
       .then((res) => res.json())
       .then((data) => {
         const userPosts = data.filter(
@@ -39,7 +39,7 @@ const ManageNeedPost = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/volunteer/${id}`, {
+        fetch(`https://join-hands-server.vercel.app/volunteer/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

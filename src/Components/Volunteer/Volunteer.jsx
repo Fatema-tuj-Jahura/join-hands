@@ -29,8 +29,8 @@ const Volunteer = () => {
       status: "requested",
     };
     console.log(volunteerData)
-    // "http://localhost:5000/requestedVolunteer"
-    fetch("http://localhost:5000/requestedVolunteer", {
+    // "https://join-hands-server.vercel.app/requestedVolunteer"
+    fetch("https://join-hands-server.vercel.app/requestedVolunteer", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

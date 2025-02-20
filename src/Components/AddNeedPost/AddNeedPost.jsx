@@ -27,7 +27,7 @@ const AddNeedPost = () => {
     const newPost = { coverImage, title, description, category, location, volunteersNeeded, deadline, organizerName, organizerEmail };
     console.log(newPost);
     // Add data
-    fetch('http://localhost:5000/volunteer', {
+    fetch('https://join-hands-server.vercel.app/volunteer', {
         method: 'POST',
         headers: {
            'content-type': 'application/json'
