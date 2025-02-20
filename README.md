@@ -4,7 +4,7 @@ Join Hands is a platform designed to connect volunteers with organizations and e
 
 🔗 Live URL
 
-Join Hands Live Demo (Replace with actual deployed link)
+Join Hands Live Demo (https://join-hand.web.app)
 
 🚀 Key Features
 
